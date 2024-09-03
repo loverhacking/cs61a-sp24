@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/analytics.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app218.us.archive.org';v.server_ms=240;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/ruffle.js.download"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://cs61a.org/lab/lab09/","20201214030224","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1607914944");
+</script>
+<link rel="stylesheet" type="text/css" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+    <meta name="description" content="CS 61A: Structure and Interpretation of Computer Programs">
+    <meta name="keywords" content="CS 61A, Computer Science, CS, 61A, Programming, John DeNero, Berkeley, EECS">
+    <meta name="author" content="Hany Farid, John DeNero">
+    
+    <meta name="viewport" content="width=device-width">
+
+    <script src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/jquery.min.js.download"></script>
+    <script src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/bootstrap.min.js.download"></script>
+    <script src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/hl.js.download"></script>
+    <script>
+        // we aren't registering builtins since
+        //      (1) they don't render differently in the current CSS from other names
+        //      (2) it's a mess to list all of them. You can extract from the site but that takes effort
+        // if (1) ceases to be true, (2) might be worth the effort. For now, we're leaving as is
+        hljsRegister({
+            'keyword': "define if cond and or let begin lambda mu quote delay cons-stream set! quasiquote unquote unquote-splicing define-macro"
+        });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/dark-mode.js.download"></script>
+    <link rel="stylesheet" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/css">
+    <link rel="stylesheet" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/style.css">
+    <link rel="stylesheet" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/mono-blue.css">
+    <link rel="icon" href="https://web.archive.org/web/20201214030224im_/https://cs61a.org/assets/images/favicon.ico">
+
+    
+
+    <title>
+Lab 9: Midterm Review | CS 61A Fall 2020
+</title>
+  </head>
+
+  <body id="index" class="home"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20201214030224/https%3A//cs61a.org/lab/lab09/" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://cs61a.org/lab/lab09/" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20201214030224"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/https://cs61a.org/lab/lab09/" title="See a list of every capture for this URL">68 captures</a><div class="r" title="Timespan for captures of this URL">14 Nov 2014 - 22 Apr 2024</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="725" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20200512050450/https://cs61a.org/lab/lab09/" title="12 May 2020"><strong>May</strong></a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 03:02:24 Dec 14, 2020">DEC</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20211231075057/https://cs61a.org/lab/lab09/" title="31 Dec 2021"><strong>Dec</strong></a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20200512050450/https://cs61a.org/lab/lab09/" title="05:04:50 May 12, 2020"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 03:02:24 Dec 14, 2020">14</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20211231075057/https://cs61a.org/lab/lab09/" title="07:50:57 Dec 31, 2021"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20190402060403/https://cs61a.org/lab/lab09/" title="02 Apr 2019"><strong>2019</strong></a></td>
+            <td class="c" id="displayYearEl" title="You are here: 03:02:24 Dec 14, 2020">2020</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20211231075057/https://cs61a.org/lab/lab09/" title="31 Dec 2021"><strong>2021</strong></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20201214030224/http://web.archive.org/screenshot/https://cs61a.org/lab/lab09/" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#" data-url="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#" data-url="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/save-page-now)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/save-page-now" target="_new"><span class="wm-title">Save Page Now</span></a></div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","https://cs61a.org/lab/lab09/","20201214030224",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt","https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container noselect">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-section">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://web.archive.org/web/20201214030224/https://cs61a.org/">
+            <img style="max-width:60px; margin-top: -20px;" class="logo" src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/logo.png">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-section">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/weekly.html">Weekly Schedule</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/office-hours.html">Office Hours</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Staff
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/instructor.html">Instructors</a></li>
+                <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/TAs.html">TAs</a></li>
+                <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/tutors.html">Tutors</a></li>
+                <!-- <li><a href="/academic-interns.html">Academic Interns</a></li> -->
+              </ul>
+            </li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/resources.html">Resources</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/about.html">Syllabus</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://denero.org/feedback.html" target="_blank">Feedback</a></li>
+<!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
+            <!-- <li><a href="https://scheme.cs61a.org">Scheme</a></li> -->
+            <!-- <li><a href="https://sql.cs61a.org">SQL</a></li> -->
+            <li><a href="https://web.archive.org/web/20201214030224/https://code.cs61a.org/">Code</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/http://tutor.cs61a.org/">Tutor</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="content" class="container">
+      
+<div class="row">
+  <div class="col-md-9">
+    <header>
+      <h1>
+        
+Lab 9: Midterm Review
+
+        
+        
+        <ul class="inline-block list-inline">
+          <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/lab09.zip" class="label label-outline">lab09.zip</a></li>
+        </ul>
+        
+        
+      </h1>
+    </header>
+    
+
+<p><i>Due by 11:59pm on Tuesday, October 27.</i></p>
+
+
+
+
+<h2 id="starter-files">Starter Files</h2>
+
+<p>Download <a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/lab09.zip">lab09.zip</a>.
+Inside the archive, you will find starter files for the questions in this lab,
+  along with a copy of the <a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/ok">Ok</a> autograder.</p>
+
+
+
+
+
+
+    
+<h2 id="submission">Submission</h2>
+
+
+<p>In order to facilitate midterm studying, solutions to this lab were released with the lab. We encourage you to try out the problems and struggle for a while before looking at the solutions!
+<strong>Note: You do not need to run</strong> <code>python ok --submit</code> <strong>to receive credit for this assignment.</strong></p>
+
+
+<h1 id="required-questions">Required Questions</h1>
+
+<h3 class="question" id="q1">Q1: All Questions Are Optional</h3>
+
+<p><strong>Updated</strong>: The following questions in this assignment are not graded, but they are highly recommended to help you prepare for the upcoming midterm. You will receive credit for this lab even if you not complete these questions.</p>
+
+<p>This question has no Ok tests.</p>
+
+
+<h1 id="suggested-questions">Suggested Questions</h1>
+
+
+
+<h2 id="recursion-and-tree-recursion">Recursion and Tree Recursion</h2>
+
+
+<h3 class="question" id="q2">Q2: Subsequences</h3>
+
+<p>A subsequence of a sequence <code>S</code> is a sequence of elements from <code>S</code>, in the same
+order they appear in <code>S</code>, but possibly with elements missing.  Thus, the lists
+<code>[]</code>, <code>[1, 3]</code>, <code>[2]</code>, and <code>[1, 2, 3]</code> are some (but not all) of the
+subsequences of <code>[1, 2, 3]</code>. Write a function that takes a list and returns a
+list of lists, for which each individual list is a subsequence of the original
+input.</p>
+
+<p>In order to accomplish this, you might first want to write a function <code>insert_into_all</code>
+that takes an item and a list of lists, adds the item to the beginning of nested list,
+and returns the resulting list.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_into_all</span><span class="hljs-params">(item, nested_list)</span>:</span>
+    <span class="hljs-string">"""Assuming that nested_list is a list of lists, return a new list
+    consisting of all the lists in nested_list, but with item added to
+    the front of each.
+
+    &gt;&gt;&gt; nl = [[], [1, 2], [3]]
+    &gt;&gt;&gt; insert_into_all(0, nl)
+    [[0], [0, 1, 2], [0, 3]]
+    """</span>
+    <span class="hljs-keyword">return</span> ______________________________
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">subseqs</span><span class="hljs-params">(s)</span>:</span>
+    <span class="hljs-string">"""Assuming that S is a list, return a nested list of all subsequences
+    of S (a list of lists). The subsequences can appear in any order.
+
+    &gt;&gt;&gt; seqs = subseqs([1, 2, 3])
+    &gt;&gt;&gt; sorted(seqs)
+    [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+    &gt;&gt;&gt; subseqs([])
+    [[]]
+    """</span>
+    <span class="hljs-keyword">if</span> ________________:
+        ________________
+    <span class="hljs-keyword">else</span>:
+        ________________
+        ________________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q subseqs</code></pre>
+
+<h3 class="question" id="q3">Q3: Increasing Subsequences</h3>
+
+<p>Just like the last question, we want to write a function that takes a list and
+returns a list of lists, where each individual list is a subsequence of the
+original input.</p>
+
+<p>This time we have another condition: we only want the subsequences for which
+consecutive elements are <em>nondecreasing</em>.  For example, <code>[1, 3, 2]</code> is a
+subsequence of <code>[1, 3, 2, 4]</code>, but since 2 &lt; 3, this subsequence would <em>not</em>
+be included in our result.</p>
+
+<p><strong>Fill in the blanks</strong> to complete the implementation of the <code>inc_subseqs</code>
+function. You may assume that the input list contains no negative elements.</p>
+
+<p>You may use the provided helper function <code>insert_into_all</code>, which takes in an
+<code>item</code> and a list of lists and inserts the <code>item</code> to the front of each list.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inc_subseqs</span><span class="hljs-params">(s)</span>:</span>
+    <span class="hljs-string">"""Assuming that S is a list, return a nested list of all subsequences
+    of S (a list of lists) for which the elements of the subsequence
+    are strictly nondecreasing. The subsequences can appear in any order.
+
+    &gt;&gt;&gt; seqs = inc_subseqs([1, 3, 2])
+    &gt;&gt;&gt; sorted(seqs)
+    [[], [1], [1, 2], [1, 3], [2], [3]]
+    &gt;&gt;&gt; inc_subseqs([])
+    [[]]
+    &gt;&gt;&gt; seqs2 = inc_subseqs([1, 1, 2])
+    &gt;&gt;&gt; sorted(seqs2)
+    [[], [1], [1], [1, 1], [1, 1, 2], [1, 2], [1, 2], [2]]
+    """</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">subseq_helper</span><span class="hljs-params">(s, prev)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> s:
+            <span class="hljs-keyword">return</span> ____________________
+        <span class="hljs-keyword">elif</span> s[<span class="hljs-number">0</span>] &lt; prev:
+            <span class="hljs-keyword">return</span> ____________________
+        <span class="hljs-keyword">else</span>:
+            a = ______________________
+            b = ______________________
+            <span class="hljs-keyword">return</span> insert_into_all(________, ______________) + ________________
+    <span class="hljs-keyword">return</span> subseq_helper(____, ____)
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q inc_subseqs</code></pre>
+
+<h3 class="question" id="q4">Q4: Number of Trees</h3>
+
+<p>A <strong>full binary tree</strong> is a tree where each node has either 2 branches or 0 branches, but never 1 branch.</p>
+
+<p>How many possible full binary tree structures exist that have exactly n leaves?</p>
+
+<p>For those interested in combinatorics, this problem does have a <a href="https://web.archive.org/web/20201214030224/http://en.wikipedia.org/wiki/Catalan_number">closed
+form solution</a>):</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">num_trees</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-string">"""How many full binary trees have exactly n leaves? E.g.,
+
+    1   2        3       3    ...
+    *   *        *       *
+       / \      / \     / \
+      *   *    *   *   *   *
+              / \         / \
+             *   *       *   *
+
+    &gt;&gt;&gt; num_trees(1)
+    1
+    &gt;&gt;&gt; num_trees(2)
+    1
+    &gt;&gt;&gt; num_trees(3)
+    2
+    &gt;&gt;&gt; num_trees(8)
+    429
+
+    """</span>
+    <span class="hljs-keyword">if</span> ____________________:
+        <span class="hljs-keyword">return</span> _______________
+    <span class="hljs-keyword">return</span> _______________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q num_trees</code></pre>
+
+
+<h2 id="generators">Generators</h2>
+
+<h3 class="question" id="q5">Q5: Generators generator</h3>
+
+<p>Write the generator function <code>make_generators_generator</code>, which takes a
+zero-argument generator function <code>g</code> and returns a generator that yields
+generators.  For each element <code>e</code> yielded by the generator object returned by
+calling <code>g</code>, a new generator object is yielded that will generate entries 1
+through <code>e</code> yielded by the generator returned by <code>g</code>.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_generators_generator</span><span class="hljs-params">(g)</span>:</span>
+    <span class="hljs-string">"""Generates all the "sub"-generators of the generator returned by
+    the generator function g.
+
+    &gt;&gt;&gt; def every_m_ints_to(n, m):
+    ...     i = 0
+    ...     while (i &lt;= n):
+    ...         yield i
+    ...         i += m
+    ...
+    &gt;&gt;&gt; def every_3_ints_to_10():
+    ...     for item in every_m_ints_to(10, 3):
+    ...         yield item
+    ...
+    &gt;&gt;&gt; for gen in make_generators_generator(every_3_ints_to_10):
+    ...     print("Next Generator:")
+    ...     for item in gen:
+    ...         print(item)
+    ...
+    Next Generator:
+    0
+    Next Generator:
+    0
+    3
+    Next Generator:
+    0
+    3
+    6
+    Next Generator:
+    0
+    3
+    6
+    9
+    """</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gen</span><span class="hljs-params">(i)</span>:</span>
+        <span class="hljs-keyword">for</span> ___________ <span class="hljs-keyword">in</span> ___________:
+            <span class="hljs-keyword">if</span> _________________________:
+                _________________________
+            _______________________
+            _______________________
+    __________________________
+    <span class="hljs-keyword">for</span> _________ <span class="hljs-keyword">in</span> __________________:
+        ______________________________
+        ______________________________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q make_generators_generator</code></pre>
+
+
+<h2 id="objects">Objects</h2>
+
+<h3 class="question" id="q6">Q6: Keyboard</h3>
+
+<p>We'd like to create a <code>Keyboard</code> class that takes in an arbitrary
+number of <code>Button</code>s and stores these <code>Button</code>s in a dictionary. The
+keys in the dictionary will be ints that represent the postition on the
+<code>Keyboard</code>, and the values will be the respective <code>Button</code>. Fill out
+the methods in the <code>Keyboard</code> class according to each description,
+using the doctests as a reference for the behavior of a <code>Keyboard</code>.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span>:</span>
+    <span class="hljs-string">"""
+    Represents a single button
+    """</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, pos, key)</span>:</span>
+        <span class="hljs-string">"""
+        Creates a button
+        """</span>
+        self.pos = pos
+        self.key = key
+        self.times_pressed = <span class="hljs-number">0</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Keyboard</span>:</span>
+    <span class="hljs-string">"""A Keyboard takes in an arbitrary amount of buttons, and has a
+    dictionary of positions as keys, and values as Buttons.
+
+    &gt;&gt;&gt; b1 = Button(0, "H")
+    &gt;&gt;&gt; b2 = Button(1, "I")
+    &gt;&gt;&gt; k = Keyboard(b1, b2)
+    &gt;&gt;&gt; k.buttons[0].key
+    'H'
+    &gt;&gt;&gt; k.press(1)
+    'I'
+    &gt;&gt;&gt; k.press(2) #No button at this position
+    ''
+    &gt;&gt;&gt; k.typing([0, 1])
+    'HI'
+    &gt;&gt;&gt; k.typing([1, 0])
+    'IH'
+    &gt;&gt;&gt; b1.times_pressed
+    2
+    &gt;&gt;&gt; b2.times_pressed
+    3
+    """</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, *args)</span>:</span>
+        ________________
+        <span class="hljs-keyword">for</span> _________ <span class="hljs-keyword">in</span> ________________:
+            ________________
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">press</span><span class="hljs-params">(self, info)</span>:</span>
+        <span class="hljs-string">"""Takes in a position of the button pressed, and
+        returns that button's output"""</span>
+        <span class="hljs-keyword">if</span> ____________________:
+            ________________
+            ________________
+            ________________
+        ________________
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">typing</span><span class="hljs-params">(self, typing_input)</span>:</span>
+        <span class="hljs-string">"""Takes in a list of positions of buttons pressed, and
+        returns the total output"""</span>
+        ________________
+        <span class="hljs-keyword">for</span> ________ <span class="hljs-keyword">in</span> ____________________:
+            ________________
+        ________________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q Keyboard</code></pre>
+
+
+<h2 id="nonlocal">Nonlocal</h2>
+
+<h3 class="question" id="q7">Q7: Advanced Counter</h3>
+
+<p>Complete the definition of <code>make_advanced_counter_maker</code>,
+which creates a function that creates counters. These counters can not
+only update their personal count, but also a shared count for all
+counters.  They can also reset either count.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_advanced_counter_maker</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">"""Makes a function that makes counters that understands the
+    messages "count", "global-count", "reset", and "global-reset".
+    See the examples below:
+
+    &gt;&gt;&gt; make_counter = make_advanced_counter_maker()
+    &gt;&gt;&gt; tom_counter = make_counter()
+    &gt;&gt;&gt; tom_counter('count')
+    1
+    &gt;&gt;&gt; tom_counter('count')
+    2
+    &gt;&gt;&gt; tom_counter('global-count')
+    1
+    &gt;&gt;&gt; jon_counter = make_counter()
+    &gt;&gt;&gt; jon_counter('global-count')
+    2
+    &gt;&gt;&gt; jon_counter('count')
+    1
+    &gt;&gt;&gt; jon_counter('reset')
+    &gt;&gt;&gt; jon_counter('count')
+    1
+    &gt;&gt;&gt; tom_counter('count')
+    3
+    &gt;&gt;&gt; jon_counter('global-count')
+    3
+    &gt;&gt;&gt; jon_counter('global-reset')
+    &gt;&gt;&gt; tom_counter('global-count')
+    1
+    """</span>
+    ________________
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">____________</span><span class="hljs-params">(__________)</span>:</span>
+        ________________
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">____________</span><span class="hljs-params">(__________)</span>:</span>
+            ________________
+            <span class="hljs-string">"*** YOUR CODE HERE ***"</span>
+            <span class="hljs-comment"># as many lines as you want</span>
+        ________________
+    ________________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q make_advanced_counter_maker</code></pre>
+
+
+<h2 id="mutable-lists">Mutable Lists</h2>
+
+<h3 class="question" id="q8">Q8: Trade</h3>
+
+<p>In the integer market, each participant has a list of positive integers to
+trade. When two participants meet, they trade the smallest non-empty prefix of
+their list of integers. A prefix is a slice that starts at index
+0.</p>
+
+<p>Write a function <code>trade</code> that exchanges the first <code>m</code> elements of list <code>first</code>
+with the first <code>n</code> elements of list <code>second</code>, such that the sums of those
+elements are equal, and the sum is as small as possible. If no such prefix
+exists, return the string <code>'No deal!'</code> and do not change either list. Otherwise
+change both lists and return <code>'Deal!'</code>. A partial implementation is provided.</p>
+
+<blockquote><p><strong>Hint:</strong> You can mutate a slice of a list using <em>slice assignment</em>. To do so, specify
+a slice of the list <code>[i:j]</code> on the left-hand side of an assignment statement
+and another list on the right-hand side of the assignment statement. The
+operation will replace the entire given slice of the list from <code>i</code> inclusive
+to <code>j</code> exclusive with the elements from the given list. The slice and the
+given list need not be the same length.</p>
+
+<pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = a
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>] = [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">6</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>b
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">6</span>]</code></pre>
+
+<p>Additionally, recall that the starting and ending indices for a slice can be left out
+and Python will use a default value. <code>lst[i:]</code> is the same as <code>lst[i:len(lst)]</code>, and
+<code>lst[:j]</code> is the same as <code>lst[0:j]</code>.</p></blockquote>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trade</span><span class="hljs-params">(first, second)</span>:</span>
+    <span class="hljs-string">"""Exchange the smallest prefixes of first and second that have equal sum.
+
+    &gt;&gt;&gt; a = [1, 1, 3, 2, 1, 1, 4]
+    &gt;&gt;&gt; b = [4, 3, 2, 7]
+    &gt;&gt;&gt; trade(a, b) # Trades 1+1+3+2=7 for 4+3=7
+    'Deal!'
+    &gt;&gt;&gt; a
+    [4, 3, 1, 1, 4]
+    &gt;&gt;&gt; b
+    [1, 1, 3, 2, 2, 7]
+    &gt;&gt;&gt; c = [3, 3, 2, 4, 1]
+    &gt;&gt;&gt; trade(b, c)
+    'No deal!'
+    &gt;&gt;&gt; b
+    [1, 1, 3, 2, 2, 7]
+    &gt;&gt;&gt; c
+    [3, 3, 2, 4, 1]
+    &gt;&gt;&gt; trade(a, c)
+    'Deal!'
+    &gt;&gt;&gt; a
+    [3, 3, 2, 1, 4]
+    &gt;&gt;&gt; b
+    [1, 1, 3, 2, 2, 7]
+    &gt;&gt;&gt; c
+    [4, 3, 1, 4, 1]
+    """</span>
+    m, n = <span class="hljs-number">1</span>, <span class="hljs-number">1</span>
+
+    equal_prefix = <span class="hljs-keyword">lambda</span>: ______________________
+    <span class="hljs-keyword">while</span> _______________________________:
+        <span class="hljs-keyword">if</span> __________________:
+            m += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            n += <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">if</span> equal_prefix():
+        first[:m], second[:n] = second[:n], first[:m]
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Deal!'</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'No deal!'</span></code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q trade</code></pre>
+
+<h3 class="question" id="q9">Q9: Shuffle</h3>
+
+<p>Define a function <code>shuffle</code> that takes a sequence with an even number of
+elements (cards) and creates a new list that interleaves the elements
+of the first half with the elements of the second half.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">card</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-string">"""Return the playing card numeral as a string for a positive n &lt;= 13."""</span>
+    <span class="hljs-keyword">assert</span> type(n) == int <span class="hljs-keyword">and</span> n &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> n &lt;= <span class="hljs-number">13</span>, <span class="hljs-string">"Bad card n"</span>
+    specials = {<span class="hljs-number">1</span>: <span class="hljs-string">'A'</span>, <span class="hljs-number">11</span>: <span class="hljs-string">'J'</span>, <span class="hljs-number">12</span>: <span class="hljs-string">'Q'</span>, <span class="hljs-number">13</span>: <span class="hljs-string">'K'</span>}
+    <span class="hljs-keyword">return</span> specials.get(n, str(n))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(cards)</span>:</span>
+    <span class="hljs-string">"""Return a shuffled list that interleaves the two halves of cards.
+
+    &gt;&gt;&gt; shuffle(range(6))
+    [0, 3, 1, 4, 2, 5]
+    &gt;&gt;&gt; suits = ['♡', '♢', '♤', '♧']
+    &gt;&gt;&gt; cards = [card(n) + suit for n in range(1,14) for suit in suits]
+    &gt;&gt;&gt; cards[:12]
+    ['A♡', 'A♢', 'A♤', 'A♧', '2♡', '2♢', '2♤', '2♧', '3♡', '3♢', '3♤', '3♧']
+    &gt;&gt;&gt; cards[26:30]
+    ['7♤', '7♧', '8♡', '8♢']
+    &gt;&gt;&gt; shuffle(cards)[:12]
+    ['A♡', '7♤', 'A♢', '7♧', 'A♤', '8♡', 'A♧', '8♢', '2♡', '8♤', '2♢', '8♧']
+    &gt;&gt;&gt; shuffle(shuffle(cards))[:12]
+    ['A♡', '4♢', '7♤', '10♧', 'A♢', '4♤', '7♧', 'J♡', 'A♤', '4♧', '8♡', 'J♢']
+    &gt;&gt;&gt; cards[:12]  # Should not be changed
+    ['A♡', 'A♢', 'A♤', 'A♧', '2♡', '2♢', '2♤', '2♧', '3♡', '3♢', '3♤', '3♧']
+    """</span>
+    <span class="hljs-keyword">assert</span> len(cards) % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>, <span class="hljs-string">'len(cards) must be even'</span>
+    half = _______________
+    shuffled = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> _____________:
+        _________________
+        _________________
+    <span class="hljs-keyword">return</span> shuffled</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q shuffle</code></pre>
+
+
+<h2 id="linked-lists">Linked Lists</h2>
+
+<h3 class="question" id="q10">Q10: Insert</h3>
+
+<p>Implement a function <code>insert</code> that takes a <code>Link</code>, a <code>value</code>, and an
+<code>index</code>, and inserts the <code>value</code> into the <code>Link</code> at the given <code>index</code>.
+You can assume the linked list already has at least one element. Do not
+return anything -- <code>insert</code> should mutate the linked list.</p>
+
+<blockquote><p><strong>Note</strong>: If the index is out of bounds, you can raise an <code>IndexError</code> with:</p>
+
+<pre><code class="hljs python"><span class="hljs-keyword">raise</span> IndexError</code></pre></blockquote>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(link, value, index)</span>:</span>
+    <span class="hljs-string">"""Insert a value into a Link at the given index.
+
+    &gt;&gt;&gt; link = Link(1, Link(2, Link(3)))
+    &gt;&gt;&gt; print(link)
+    &lt;1 2 3&gt;
+    &gt;&gt;&gt; insert(link, 9001, 0)
+    &gt;&gt;&gt; print(link)
+    &lt;9001 1 2 3&gt;
+    &gt;&gt;&gt; insert(link, 100, 2)
+    &gt;&gt;&gt; print(link)
+    &lt;9001 1 100 2 3&gt;
+    &gt;&gt;&gt; insert(link, 4, 5)
+    IndexError
+    """</span>
+    <span class="hljs-keyword">if</span> ____________________:
+        ____________________
+        ____________________
+        ____________________
+    <span class="hljs-keyword">elif</span> ____________________:
+        ____________________
+    <span class="hljs-keyword">else</span>:
+        ____________________
+
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q insert</code></pre>
+
+<h3 class="question" id="q11">Q11: Deep Linked List Length</h3>
+
+<p>A linked list that contains one or more linked lists as elements is called a
+<em>deep</em> linked list. Write a function <code>deep_len</code> that takes in a (possibly deep)
+linked list and returns the <em>deep length</em> of that linked list. The deep length of
+a linked list is the total number of non-link elements in the list, as well as the
+total number of elements contained in all contained lists. See the function's doctests
+for examples of the deep length of linked lists.</p>
+
+<blockquote><p><strong>Hint:</strong> Use <code>isinstance</code> to check if something is an instance of an object.</p></blockquote>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deep_len</span><span class="hljs-params">(lnk)</span>:</span>
+    <span class="hljs-string">""" Returns the deep length of a possibly deep linked list.
+
+    &gt;&gt;&gt; deep_len(Link(1, Link(2, Link(3))))
+    3
+    &gt;&gt;&gt; deep_len(Link(Link(1, Link(2)), Link(3, Link(4))))
+    4
+    &gt;&gt;&gt; levels = Link(Link(Link(1, Link(2)), \
+            Link(3)), Link(Link(4), Link(5)))
+    &gt;&gt;&gt; print(levels)
+    &lt;&lt;&lt;1 2&gt; 3&gt; &lt;4&gt; 5&gt;
+    &gt;&gt;&gt; deep_len(levels)
+    5
+    """</span>
+    <span class="hljs-keyword">if</span> ______________:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">elif</span> ______________:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> _________________________
+</code></pre>
+
+</solution>
+
+
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q deep_len</code></pre>
+
+<h3 class="question" id="q12">Q12: Linked Lists as Strings</h3>
+
+<p>Kevin and Jerry like different ways of displaying the linked list
+structure in Python. While Kevin likes box and pointer diagrams,
+Jerry prefers a more futuristic way. Write a function
+<code>make_to_string</code> that returns a function that converts the
+linked list to a string in their preferred style.</p>
+
+<p><em>Hint</em>:  You can convert numbers to strings using the <code>str</code> function,
+and you can combine strings together using <code>+</code>.</p>
+
+<pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-number">4</span>)
+<span class="hljs-string">'4'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">'cs '</span> + str(<span class="hljs-number">61</span>) + <span class="hljs-string">'a'</span>
+<span class="hljs-string">'cs 61a'</span></code></pre>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_to_string</span><span class="hljs-params">(front, mid, back, empty_repr)</span>:</span>
+    <span class="hljs-string">""" Returns a function that turns linked lists to strings.
+
+    &gt;&gt;&gt; kevins_to_string = make_to_string("[", "|-]--&gt;", "", "[]")
+    &gt;&gt;&gt; jerrys_to_string = make_to_string("(", " . ", ")", "()")
+    &gt;&gt;&gt; lst = Link(1, Link(2, Link(3, Link(4))))
+    &gt;&gt;&gt; kevins_to_string(lst)
+    '[1|-]--&gt;[2|-]--&gt;[3|-]--&gt;[4|-]--&gt;[]'
+    &gt;&gt;&gt; kevins_to_string(Link.empty)
+    '[]'
+    &gt;&gt;&gt; jerrys_to_string(lst)
+    '(1 . (2 . (3 . (4 . ()))))'
+    &gt;&gt;&gt; jerrys_to_string(Link.empty)
+    '()'
+    """</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printer</span><span class="hljs-params">(lnk)</span>:</span>
+        <span class="hljs-keyword">if</span> ______________:
+            <span class="hljs-keyword">return</span> _________________________
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> _________________________
+    <span class="hljs-keyword">return</span> printer</code></pre>
+
+</solution>
+
+
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q make_to_string</code></pre>
+
+
+<h2 id="trees">Trees</h2>
+
+<h3 class="question" id="q13">Q13: Prune Small</h3>
+
+<p>Complete the function <code>prune_small</code> that takes in a <code>Tree</code> <code>t</code> and a
+number <code>n</code> and prunes <code>t</code> mutatively. If <code>t</code> or any of its branches
+has more than <code>n</code> branches, the <code>n</code> branches with the smallest labels
+should be kept and any other branches should be <em>pruned</em>, or removed,
+from the tree.</p>
+
+<solution>
+
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">prune_small</span><span class="hljs-params">(t, n)</span>:</span>
+    <span class="hljs-string">"""Prune the tree mutatively, keeping only the n branches
+    of each node with the smallest label.
+
+    &gt;&gt;&gt; t1 = Tree(6)
+    &gt;&gt;&gt; prune_small(t1, 2)
+    &gt;&gt;&gt; t1
+    Tree(6)
+    &gt;&gt;&gt; t2 = Tree(6, [Tree(3), Tree(4)])
+    &gt;&gt;&gt; prune_small(t2, 1)
+    &gt;&gt;&gt; t2
+    Tree(6, [Tree(3)])
+    &gt;&gt;&gt; t3 = Tree(6, [Tree(1), Tree(3, [Tree(1), Tree(2), Tree(3)]), Tree(5, [Tree(3), Tree(4)])])
+    &gt;&gt;&gt; prune_small(t3, 2)
+    &gt;&gt;&gt; t3
+    Tree(6, [Tree(1), Tree(3, [Tree(1), Tree(2)])])
+    """</span>
+    <span class="hljs-keyword">while</span> ___________________________:
+        largest = max(_______________, key=____________________)
+        _________________________
+    <span class="hljs-keyword">for</span> __ <span class="hljs-keyword">in</span> _____________:
+        ___________________
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre><code class="nohighlight">python3 ok -q prune_small</code></pre>
+<script>
+    $('.alwaystoggle').css('display', 'inline-block');
+    $('.alwaystoggle').click(function() {
+      var solution_id = $(this).attr('id');
+      $('div.' + solution_id).slideToggle(600);
+    });
+</script>
+
+  </div>
+
+  <div class="col-md-3 sticky">
+    <nav class="hidden-print hidden-sm hidden-xs sidebar">
+      <ul class="nav nav-stacked noselect">
+  <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#submission">Submission</a></li>
+  <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#required-questions">Required Questions</a></li>
+  <ul class="nav nav-stacked noselect">
+    <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q1">Q1: All Questions Are Optional</a></li>
+  </ul>
+  <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#suggested-questions">Suggested Questions</a></li>
+  <ul class="nav nav-stacked noselect">
+    <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#recursion-and-tree-recursion">Recursion and Tree Recursion</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li class=""><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q2">Q2: Subsequences</a></li>
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q3">Q3: Increasing Subsequences</a></li>
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q4">Q4: Number of Trees</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#generators">Generators</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q5">Q5: Generators generator</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#objects">Objects</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q6">Q6: Keyboard</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#nonlocal">Nonlocal</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q7">Q7: Advanced Counter</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#mutable-lists">Mutable Lists</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q8">Q8: Trade</a></li>
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q9">Q9: Shuffle</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#linked-lists">Linked Lists</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q10">Q10: Insert</a></li>
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q11">Q11: Deep Linked List Length</a></li>
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q12">Q12: Linked Lists as Strings</a></li>
+    </ul>
+    <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#trees">Trees</a></li>
+    <ul class="nav nav-stacked noselect">
+      <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/lab/lab09/#q13">Q13: Prune Small</a></li>
+    </ul>
+  </ul>
+</ul>
+    </nav>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="container">
+      <div class="row text-center">
+        <div class="col col-sm-4">
+          <h3><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/">CS 61A</a></h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/weekly.html">Weekly Schedule</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/office-hours.html">Office Hours</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/staff.html">Staff</a></li>
+          </ul>
+        </div>
+        <div class="col col-sm-4">
+          <h3><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/resources.html">Resources</a></h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/studying.html">Studying Guide</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/debugging.html">Debugging Guide</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/composition.html">Composition Guide</a></li>
+          </ul>
+        </div>
+        <div class="col col-sm-4">
+          <h3><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/about.html">Policies</a></h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/about.html#assignments">Assignments</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/about.html#exams">Exams</a></li>
+            <li><a href="https://web.archive.org/web/20201214030224/https://cs61a.org/articles/about.html#grading">Grading</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    
+
+<script>
+  $('.sidebar ul').addClass('nav nav-stacked noselect');
+  $('body').scrollspy({
+    target: '.sidebar',
+    offset: 40
+  });
+
+  function goToId(id) {
+    var target = $(id);
+    console.log(target);
+    target.parent().show();
+    $('html,body').animate({
+      scrollTop: target.offset().top,
+    }, 100);
+    $("body").scrollspy('refresh');
+  }
+
+  if (location.hash) {
+    setTimeout(function() {
+      // window.scrollTo(0, 0);
+      if (location.hash) {
+        goToId(location.hash);
+      }
+    }, 1);
+  }
+
+  $("a").click(function(event) {
+    var urlBeforeHashRegEx = new RegExp("^"+window.location.href.split("#")[0]);
+    if (/^#/.test(this.hash) && urlBeforeHashRegEx.test(this.href)) {
+      event.preventDefault();
+      goToId(this.hash);
+      document.location.hash = this.hash;
+    }
+  });
+</script>
+
+  
+
+<div id="moker-open-msg" style="visibility: hidden;"></div><iframe id="lzufrikW" frameborder="0" src="./Lab 9_ Midterm Review _ CS 61A Fall 2020_files/translateSandbox.html" style="width: 0px; height: 0px; display: none;"></iframe></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"><template shadowrootmode="open"><style>#root{-webkit-text-size-adjust:100%;box-sizing:border-box;font-size:14px;font-weight:400;letter-spacing:0;line-height:1.28581;text-transform:none;color:#182026;font-family:-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue","Icons16",sans-serif;touch-action:manipulation}#root>.bp5-portal{z-index:9999999999}</style><link rel="stylesheet" href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/normalize.css"><link rel="stylesheet" href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/blueprint.css"><link rel="stylesheet" href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/blueprint-select.css"><link rel="stylesheet" href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/cropper.css"><style>#translate-panel{background-color:#f6f7f9;display:flex;flex-direction:column;padding-bottom:8px}.bp5-dark #translate-panel{background-color:#252a31}#translate-panel .fixed{flex-shrink:0;margin-bottom:10px}#translate-panel .body{flex-grow:1;overflow:auto;overscroll-behavior:contain}#translate-panel .body::-webkit-scrollbar{width:8px;background-color:rgba(0,0,0,0);-webkit-border-radius:100px}#translate-panel .body::-webkit-scrollbar:hover{background-color:rgba(0,0,0,.09)}#translate-panel .body::-webkit-scrollbar-thumb:vertical{background:rgba(0,0,0,.5);-webkit-border-radius:100px}#translate-panel .body::-webkit-scrollbar-thumb:vertical:active{background:rgba(0,0,0,.61);-webkit-border-radius:100px}#translate-panel.size-small,#translate-panel.size-small h6.bp5-heading,#translate-panel.size-small .bp5-control.bp5-large,#translate-panel.size-small textarea.bp5-input.bp5-small{font-size:14px}#translate-panel.size-small .phonetic-item,#translate-panel.size-small .quick-settings a{font-size:12px}#translate-panel.size-middle,#translate-panel.size-middle h6.bp5-heading,#translate-panel.size-middle .bp5-control.bp5-large,#translate-panel.size-middle textarea.bp5-input{font-size:18px}#translate-panel.size-middle .phonetic-item,#translate-panel.size-middle .quick-settings a{font-size:14px}#translate-panel.size-large,#translate-panel.size-large h6.bp5-heading,#translate-panel.size-large .bp5-control.bp5-large,#translate-panel.size-large textarea.bp5-input.bp5-large{font-size:22px}#translate-panel.size-large .source,#translate-panel.size-large .phonetic-item,#translate-panel.size-large .quick-settings a{font-size:18px}#translate-panel .bp5-button.bp5-small,#translate-panel .bp5-small .bp5-button{min-height:20px;min-width:20px}#translate-panel .header{display:flex;align-items:center;padding:4px 6px 4px 10px;border-bottom:1px solid #d1d1d1}.bp5-dark #translate-panel .header{border-bottom-color:rgba(17,20,24,.4)}#translate-panel .header .drag-block{min-width:5px;flex-shrink:0;flex-grow:1;align-self:stretch}#translate-panel .header .left{flex-shrink:0;display:flex}#translate-panel .header .right{flex-shrink:0;display:flex;align-items:center}#translate-panel .header .right .bp5-icon-arrow-right{flex-shrink:0;margin:0 5px}#translate-panel .header .right>.bp5-button{flex-shrink:0;margin:0 1px}#translate-panel .header .right>.bp5-button:last-child{margin-right:0}#translate-panel .quick-settings{padding:4px 9px;margin:0 1px}#translate-panel .quick-settings>div{margin-bottom:5px}#translate-panel .quick-settings .bp5-control{margin-bottom:0}#translate-panel .query-text{position:relative;padding:10px 10px 2px 10px}#translate-panel .query-text textarea.bp5-input{min-height:44px;font-family:system-ui,-apple-system,"Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";overscroll-behavior:contain}#translate-panel .query-text .translate-btn{position:absolute;opacity:.6}#translate-panel .query-text .translate-btn:hover{opacity:1}#translate-panel .body{padding:0 10px}#translate-panel .body .bp5-card:first-child{margin-top:1px}#translate-panel .body .bp5-card:last-child{margin-bottom:1px}#translate-panel .body .no-api{margin:20px 0}.result-block{margin:8px 0;padding:2px 5px}.result-block .bp5-button{visibility:hidden}.result-block .error .bp5-button,.result-block:hover .bp5-button{visibility:visible}.result-block .legend{display:flex;align-items:center;justify-content:space-between}.result-block .legend .legend-left{display:flex;align-items:center}.result-block .legend .api-ico,.result-block .legend .bp5-heading{flex-shrink:0;white-space:nowrap}.result-block .legend .api-ico{display:inline-block;width:14px;height:14px;background-size:contain;margin-right:3px}.result-block .legend .bp5-heading{margin-bottom:0;margin-right:10px}.result-block .legend .source{cursor:pointer;font-size:12px;display:inline-flex;align-items:center}.result-block .legend .source .source-text{overflow:hidden}.result-block .legend .source .bp5-icon{position:relative;top:-1px;margin-left:1px}.result-block .phonetic{display:flex;flex-wrap:wrap}.result-block .phonetic .phonetic-item{display:flex;align-items:center;font-size:12px}.result-block .phonetic .phonetic-item:not(:last-child){margin-right:12px}.result-block .common-result p{line-height:1.3;margin:2px 0;overflow-wrap:break-word}.result-block .common-result .dict a{text-decoration:underline}.result-block .error{font-size:12px;padding:5px 10px}.result-block .dict-pos{margin-right:5px}.external-translators{margin-bottom:3px;padding:0;display:flex;flex-wrap:wrap}.external-translators>div{margin:0 5px 5px 0}.quick-links a{margin:0 5px 5px 0}#popper-container{width:250px;max-width:100%;position:absolute;left:0;top:0;z-index:9999999998;touch-action:none;transition:opacity .2s;background-color:#f6f7f9}.bp5-dark #popper-container{background-color:#252a31}#popper-container.show{opacity:1;pointer-events:auto;-moz-user-select:auto;user-select:auto}#popper-container,#popper-container[data-popper-reference-hidden=true]{opacity:0;pointer-events:none;-moz-user-select:none;user-select:none}#popper-container .drag-block{cursor:-webkit-grab;cursor:grab}#popper-container.pin{position:fixed}#popper-container.pin .arrow{display:none}#popper-container .arrow,#popper-container .arrow::before{position:absolute;width:8px;height:8px;z-index:-1}#popper-container .arrow::before{content:"";transform:rotate(45deg);background:#f6f7f9}.bp5-dark #popper-container .arrow::before{background-color:#252a31}#popper-container .arrow{display:none}#popper-container.show[data-popper-placement]:not([data-popper-reference-hidden=true]) .arrow{display:block}#popper-container[data-popper-placement^=top] .arrow{bottom:-5px}#popper-container[data-popper-placement^=top] .arrow::before{border-right:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}#popper-container[data-popper-placement^=bottom] .arrow{top:-5px}#popper-container[data-popper-placement^=bottom] .arrow::before{border-left:1px solid #d1d1d1;border-top:1px solid #d1d1d1}#popper-container[data-popper-placement^=left] .arrow{right:-5px}#popper-container[data-popper-placement^=left] .arrow::before{border-right:1px solid #d1d1d1;border-top:1px solid #d1d1d1}#popper-container[data-popper-placement^=right] .arrow{left:-5px}#popper-container[data-popper-placement^=right] .arrow::before{border-left:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}#translate-btn{display:none;position:absolute;z-index:9999999999;left:0;top:0}#translate-btn .bp5-button{padding:2px;min-width:0;min-height:0}#translate-btn .btn-icon{width:18px;height:18px;background-image:url(chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/logo.png);background-size:contain}.bp5-dark #translate-btn .btn-icon{background-image:url(chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/logowhite36.png)}#translate-btn.show{display:block}.translate-type-selector .bp5-label{display:inline}.translate-type-selector .bp5-radio{margin-bottom:0}#ocr-container{position:fixed;z-index:99999999999999;left:0;top:0;right:0;bottom:0}#ocr-container .toolbar{display:none;position:absolute;z-index:1}#ocr-container img{max-width:100%}#app{cursor:default}.switch-pin{flex-shrink:0;cursor:pointer}.switch-pin .bp5-icon-pin{transition:transform .2s,color .2s;transform:rotate(-45deg)}.pin .switch-pin .bp5-icon-pin{transform:rotate(-70deg)}.cut-btn{margin-left:2px}.app-toaster-container{position:fixed !important;z-index:9999999999 !important}.app-toaster-container .bp5-toast{min-width:auto}#web-trs-panel .app-toaster-container{padding-right:0;padding-left:0}#web-trs-panel .page-trs-form-group{margin:0 0 0 0;align-items:center}#web-trs-panel .page-trs-form-group>label{width:70px}</style><div id="root" dir="ltr"><div id="app"><div id="translate-btn" style=""><button type="button" class="bp5-button"><span class="btn-icon"></span></button></div><div id="popper-container" class="bp5-elevation-4" style="width: 286.752px; transform: translate(0px, 0px);"><div id="translate-panel" class="size-small"><div class="fixed"><div class="header"><div class="left"><div class="switch-pin"><button type="button" class="bp5-button bp5-minimal bp5-small"><span aria-hidden="true" class="bp5-icon bp5-icon-pin"><svg data-icon="pin" height="14" role="img" viewBox="0 0 16 16" width="14"><path d="M9.41.92c-.51.51-.41 1.5.15 2.56L4.34 7.54C2.8 6.48 1.45 6.05.92 6.58l3.54 3.54-3.54 4.95 4.95-3.54 3.54 3.54c.53-.53.1-1.88-.96-3.42l4.06-5.22c1.06.56 2.04.66 2.55.15L9.41.92z" fill-rule="evenodd"></path></svg></span></button></div><button type="button" title="图片翻译" class="bp5-button bp5-minimal bp5-small"><span aria-hidden="true" class="bp5-icon bp5-icon-media"><svg data-icon="media" height="14" role="img" viewBox="0 0 16 16" width="14"><path d="M11.99 6.99c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm3-5h-14c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-10c0-.55-.45-1-1-1zm-1 9l-5-3-1 2-3-4-3 5v-7h12v7z" fill-rule="evenodd"></path></svg></span></button><button type="button" title="语音翻译" class="bp5-button bp5-minimal bp5-small"><span class="bp5-icon"><svg version="1.1" id="Capa_1" width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490.9 490.9" xml:space="preserve"><g><g><path d="M245.5,322.9c53,0,96.2-43.2,96.2-96.2V96.2c0-53-43.2-96.2-96.2-96.2s-96.2,43.2-96.2,96.2v130.5 C149.3,279.8,192.5,322.9,245.5,322.9z M173.8,96.2c0-39.5,32.2-71.7,71.7-71.7s71.7,32.2,71.7,71.7v130.5 c0,39.5-32.2,71.7-71.7,71.7s-71.7-32.2-71.7-71.7V96.2z"></path><path d="M94.4,214.5c-6.8,0-12.3,5.5-12.3,12.3c0,85.9,66.7,156.6,151.1,162.8v76.7h-63.9c-6.8,0-12.3,5.5-12.3,12.3 s5.5,12.3,12.3,12.3h152.3c6.8,0,12.3-5.5,12.3-12.3s-5.5-12.3-12.3-12.3h-63.9v-76.7c84.4-6.3,151.1-76.9,151.1-162.8 c0-6.8-5.5-12.3-12.3-12.3s-12.3,5.5-12.3,12.3c0,76.6-62.3,138.9-138.9,138.9s-138.9-62.3-138.9-138.9 C106.6,220,101.2,214.5,94.4,214.5z"></path></g></g></svg></span></button></div><div class="drag-block" title="按住不放可以拖动"></div><div class="right"><button type="button" disabled="" title="添加到收藏夹" class="bp5-button bp5-disabled bp5-minimal bp5-small" tabindex="-1"><span aria-hidden="true" class="bp5-icon bp5-icon-star-empty"><svg data-icon="star-empty" height="14" role="img" viewBox="0 0 16 16" width="14"><path d="M16 6.11l-5.53-.84L8 0 5.53 5.27 0 6.11l4 4.1L3.06 16 8 13.27 12.94 16 12 10.21l4-4.1zM4.91 13.2l.59-3.62L3 7.02l3.45-.53L8 3.2l1.55 3.29 3.45.53-2.5 2.56.59 3.62L8 11.49 4.91 13.2z" fill-rule="evenodd"></path></svg></span></button><button type="button" class="bp5-button bp5-minimal bp5-small settings" title="快捷设置"><span aria-hidden="true" class="bp5-icon bp5-icon-cog"><svg data-icon="cog" height="14" role="img" viewBox="0 0 16 16" width="14"><path d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill-rule="evenodd"></path></svg></span></button><button type="button" title="关闭(Esc)" class="bp5-button bp5-minimal bp5-small"><span aria-hidden="true" class="bp5-icon bp5-icon-cross"><svg data-icon="cross" height="18" role="img" viewBox="0 0 16 16" width="18"><path d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z" fill-rule="evenodd"></path></svg></span></button></div></div><div class="bp5-collapse"><div class="bp5-collapse-body" aria-hidden="true"><div class="quick-settings bp5-card bp5-elevation-0"><div><span aria-controls="listbox-0" aria-expanded="false" aria-haspopup="listbox" class="lang-select bp5-popover-target" role="combobox"><button type="button" class="bp5-button bp5-small"><span class="bp5-button-text">自动检测</span><span aria-hidden="true" class="bp5-icon bp5-icon-caret-down"><svg data-icon="caret-down" height="16" role="img" viewBox="0 0 16 16" width="16"><path d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z" fill-rule="evenodd"></path></svg></span></button></span><span aria-hidden="true" class="bp5-icon bp5-icon-arrow-right" style="margin: 0px 10px;"><svg data-icon="arrow-right" height="12" role="img" viewBox="0 0 16 16" width="12"><path d="M14.7 7.29l-5-5a.965.965 0 00-.71-.3 1.003 1.003 0 00-.71 1.71l3.29 3.29H1.99c-.55 0-1 .45-1 1s.45 1 1 1h9.59l-3.29 3.29a1.003 1.003 0 001.42 1.42l5-5c.18-.18.29-.43.29-.71s-.12-.52-.3-.7z" fill-rule="evenodd"></path></svg></span><span aria-controls="listbox-1" aria-expanded="false" aria-haspopup="listbox" class="lang-select bp5-popover-target" role="combobox"><button type="button" class="bp5-button bp5-small"><span class="bp5-button-text">中文(简体)</span><span aria-hidden="true" class="bp5-icon bp5-icon-caret-down"><svg data-icon="caret-down" height="16" role="img" viewBox="0 0 16 16" width="16"><path d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z" fill-rule="evenodd"></path></svg></span></button></span></div><div><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox" checked=""><span class="bp5-control-indicator"></span>谷歌</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox" checked=""><span class="bp5-control-indicator"></span>DeepL</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>ChatGPT</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>Gemini</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>硅基</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>混元</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>文心</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>智谱</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>豆包</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>通义</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>DeepSeek</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>零一</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>MiniMax</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>百川</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>Kimi</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>百度</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>百度(专业版)</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>腾讯</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>彩云</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>阿里</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>阿里(专业版)</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>有道</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>火山</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>必应词典</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>搜狗</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox" checked=""><span class="bp5-control-indicator"></span>Yandex</label></div><div><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>自动朗读</label><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>自动复制</label></div><div class="bp5-radio-group"><label class="bp5-control bp5-radio bp5-inline"><input name="Blueprint5.RadioGroup-0" type="radio" value="small" checked=""><span class="bp5-control-indicator"></span>小</label><label class="bp5-control bp5-radio bp5-inline"><input name="Blueprint5.RadioGroup-0" type="radio" value="middle"><span class="bp5-control-indicator"></span>中</label><label class="bp5-control bp5-radio bp5-inline"><input name="Blueprint5.RadioGroup-0" type="radio" value="large"><span class="bp5-control-indicator"></span>大</label></div><div><label class="bp5-control bp5-checkbox bp5-inline"><input type="checkbox"><span class="bp5-control-indicator"></span>显示文本框</label><label class="bp5-control bp5-checkbox bp5-inline" style="margin-right: 0px;"><input type="checkbox"><span class="bp5-control-indicator"></span>鼠标悬浮取词</label></div><a class="bp5-text-small">打开完整设置</a></div></div></div></div><div class="body"><p>请输入需要翻译的文本。</p></div></div><div class="arrow"></div></div><div id="web-trs-panel"></div></div></div></template></div></div></html>
