@@ -1,1 +1,1 @@
-My solution for cs61a sp24, part work from fa20
+My solution for cs61a sp24, part lab and proj from sp23
